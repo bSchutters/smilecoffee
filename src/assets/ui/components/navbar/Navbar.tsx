@@ -7,15 +7,16 @@ export const Navbar = () => {
     <Squircle
       cornerRadius={20}
       cornerSmoothing={1}
-      className="w-10/12 h-[100px]"
+      className="w-full h-[100px]"
     >
-      <div className="bg-kakiDarker flex items-center justify-around w-full h-full ">
-        <Link to="/menu">
+      <div className="bg-kakiDarker flex items-center justify-around w-full h-[100px]">
+        <Link to="/coffee">
           <Typography
             text="Menu"
             size="35"
             color="beige"
             font="cafeFrancoise"
+            hoverColor="orange"
           />
         </Link>
         <Link to="/galerie">
@@ -24,6 +25,7 @@ export const Navbar = () => {
             size="35"
             color="beige"
             font="cafeFrancoise"
+            hoverColor="orange"
           />
         </Link>
         <Link to="/about">
@@ -32,6 +34,7 @@ export const Navbar = () => {
             size="35"
             color="beige"
             font="cafeFrancoise"
+            hoverColor="orange"
           />
         </Link>
         <Link to="/contact">
@@ -40,6 +43,7 @@ export const Navbar = () => {
             size="35"
             color="beige"
             font="cafeFrancoise"
+            hoverColor="orange"
           />
         </Link>
       </div>

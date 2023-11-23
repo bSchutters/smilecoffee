@@ -69,7 +69,7 @@ export const Button = ({
 
   return (
     <button
-      className={`${className} ${textColorClass} ${textSizeClass} font-cafeFrancoise hover:text-kakiPrimary `}
+      className={`${className} ${textColorClass} ${textSizeClass} font-cafeFrancoise hover:text-kakiPrimary transition-all`}
     >
       <Squircle
         cornerRadius={10}

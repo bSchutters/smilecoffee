@@ -13,7 +13,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/design-system" element={<DesignSystem />} />
-        <Route path="/menu" element={<Menu />} />
+        <Route path="/coffee" element={<Menu />} />
+        <Route path="/coffee" element={<Menu />} />
+        <Route path="/food" element={<Menu />} />
+        <Route path="/beans" element={<Menu />} />
         <Route path="/galerie" element={<Galerie />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />

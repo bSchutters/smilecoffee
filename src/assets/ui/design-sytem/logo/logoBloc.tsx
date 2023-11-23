@@ -60,7 +60,10 @@ export const LogoBloc = ({
           cornerSmoothing={1}
           className={`flex items-center justify-center ${bgBoxColor} ${width} ${height}`}
         >
-          <LogoTextV color={logoColor} className={className} />
+          <LogoTextV
+            color={logoColor}
+            className={`${className} transition-all`}
+          />
         </Squircle>
       </Link>
     );

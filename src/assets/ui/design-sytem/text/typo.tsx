@@ -1,9 +1,11 @@
 interface typoProps {
   size: "70" | "50" | "35" | "28" | "22" | "20" | "18";
-  color?: "beige" | "orange" | "kaki" | "kakiClair" | any;
+  color: "beige" | "orange" | "kaki" | "kakiClair";
   font: "cafeFrancoise" | "tanker" | "pally";
+  hoverColor?: "beige" | "orange" | "kaki" | "kakiClair";
   text: string;
   className?: string;
+  weigth?: "normal" | "bold" | "medium";
 }
 
 export const Typography = ({
@@ -12,10 +14,14 @@ export const Typography = ({
   text,
   className,
   font,
+  hoverColor,
+  weigth = "normal",
 }: typoProps) => {
   let sizeClass = "";
   let colorClass = "";
   let fontClass = "";
+  let hoverColorClass = "";
+  let weigthClass = "";
 
   switch (size) {
     case "70":
@@ -68,8 +74,37 @@ export const Typography = ({
       break;
   }
 
+  switch (hoverColor) {
+    case "beige":
+      hoverColorClass = "hover:text-beigePrimary";
+      break;
+    case "orange":
+      hoverColorClass = "hover:text-orangePrimary";
+      break;
+    case "kaki":
+      hoverColorClass = "hover:text-kakiPrimary";
+      break;
+    case "kakiClair":
+      hoverColorClass = "hover:text-kakiLighter";
+      break;
+  }
+
+  switch (weigth) {
+    case "bold":
+      weigthClass = "font-bold";
+      break;
+    case "normal":
+      weigthClass = "font-normal";
+      break;
+    case "medium":
+      weigthClass = "font-medium";
+      break;
+  }
+
   return (
-    <p className={`${sizeClass} ${colorClass} ${fontClass} ${className}`}>
+    <p
+      className={`${sizeClass} ${colorClass} ${fontClass} ${className} ${hoverColorClass} ${weigthClass} transition-all`}
+    >
       {text}
     </p>
   );
