@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Tanker";
+  src: url("../fonts/Tanker/Tanker-Regular.woff2") format("woff2"),
+    url("../fonts/Tanker/Tanker-Regular.woff") format("woff"),
+    url("../fonts/Tanker/Tanker-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CafeFrancoise";
+  src: url("../fonts/CafeFrancoise/");
+  src: url("../fonts/CafeFrancoise/?#iefix") format("embedded-opentype"),
+    url("../fonts/CafeFrancoise/CafeFrancoise.woff2") format("woff2"),
+    url("../fonts/CafeFrancoise/CafeFrancoise.woff") format("woff"),
+    url("../fonts/CafeFrancoise/CafeFrancoise.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pally";
+  src: url("../fonts/Pally/Pally-Variable.woff2") format("woff2"),
+    url("../fonts/Pally/Pally-Variable.woff") format("woff"),
+    url("../fonts/Pally/Pally-Variable.ttf") format("truetype");
+  font-weight: 400 700;
+  font-display: swap;
+  font-style: normal;
+}

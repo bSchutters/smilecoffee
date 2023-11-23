@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Cafe\' Francoise';
+    src: url('CafFranoise.eot');
+    src: url('CafFranoise.eot?#iefix') format('embedded-opentype'),
+        url('CafFranoise.woff2') format('woff2'),
+        url('CafFranoise.woff') format('woff'),
+        url('CafFranoise.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
