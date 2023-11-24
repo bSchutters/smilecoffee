@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { Typography } from "../../../design-sytem/text/typo";
 import { BeansIcon } from "../iconsNavMenu/beansIcon";
 import { CoffeeIcon } from "../iconsNavMenu/coffeeIcon";
@@ -9,12 +9,10 @@ interface itemNavMenuProps {
   title: string;
   link: string;
   icon: "beans" | "coffee" | "food";
-  variantStyle?: "normal" | "actif";
 }
 
 export const ItemNavMenu = ({ title, link, icon }: itemNavMenuProps) => {
   let iconItem = null;
-  let variantStyleClass = "";
 
   switch (icon) {
     case "beans":
@@ -28,19 +26,16 @@ export const ItemNavMenu = ({ title, link, icon }: itemNavMenuProps) => {
       break;
   }
 
-  switch (variantStyleClass) {
-    case "normal":
-      variantStyleClass = "bg-kakiDarker hover:bg-kakiLighter transition-all";
-      break;
-    case "actif":
-      variantStyleClass = "bg-kakiLighter";
-      break;
-  }
+  const location = useLocation().pathname;
+  const isActive = location === link;
+  const bgColorClass = isActive ? "bg-kakiLighter" : "bg-kakiPrimary";
 
   return (
     <Squircle cornerRadius={40} cornerSmoothing={1} className="w-1/3">
-      <Link to={link}>
-        <div className="flex items-center justify-around h-full w-full gap-5 p-5 bg-kakiDarker hover:bg-kakiLighter transition-all">
+      <NavLink to={link}>
+        <div
+          className={`${bgColorClass} flex items-center justify-around h-full w-full gap-5 p-5 hover:bg-kakiLighter transition-all `}
+        >
           <Typography
             text={title}
             size="50"
@@ -49,7 +44,7 @@ export const ItemNavMenu = ({ title, link, icon }: itemNavMenuProps) => {
           />
           {iconItem}
         </div>
-      </Link>
+      </NavLink>
     </Squircle>
   );
 };

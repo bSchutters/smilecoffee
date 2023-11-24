@@ -1,5 +1,5 @@
 interface BeansIconProps {
-  color: "beige" | "kaki" | "orange";
+  color: "beige" | "kaki" | "orange" | string;
   className?: string;
 }
 

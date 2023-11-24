@@ -22,13 +22,13 @@ export default function CTA() {
           />
         </div>
         <div className="flex gap-30 h-full">
-          <Link to="/coffee" className="w-full">
+          <Link to="/menu/coffee" className="w-full">
             <BlocButtonCTA
               title="Coffee made with love"
               description="Using only the best beans ensures a perfect cup every time."
             />
           </Link>
-          <Link to="/food" className="w-full">
+          <Link to="/menu/food" className="w-full">
             <BlocButtonCTA
               title="fresh baked goods"
               description="From croissants to cakes, our pasties are made with the finest ingredients."
