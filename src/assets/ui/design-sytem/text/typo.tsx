@@ -3,7 +3,7 @@ interface typoProps {
   color: "beige" | "orange" | "kaki" | "kakiClair";
   font: "cafeFrancoise" | "tanker" | "pally";
   hoverColor?: "beige" | "orange" | "kaki" | "kakiClair";
-  text: string;
+  text: string | JSX.Element;
   className?: string;
   weigth?: "normal" | "bold" | "medium";
 }

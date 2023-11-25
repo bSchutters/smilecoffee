@@ -6,22 +6,20 @@ export default function About() {
     <Squircle
       cornerRadius={40}
       cornerSmoothing={1}
-      className="w-full bg-kakiDarker flex max-h-[600px]"
+      className="bg-kakiDarker flex "
     >
       <div className="w-1/2 ">
-        <Squircle
-          cornerRadius={40}
-          cornerSmoothing={1}
-          className="h-full w-full"
-        >
-          <img
-            src="https://images.unsplash.com/photo-1514066558159-fc8c737ef259?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="image"
-            className="h-full w-full object-cover"
-          />
-        </Squircle>
+        <div className="h-1/2">
+          <Squircle cornerRadius={40} cornerSmoothing={1} className="h-[620px]">
+            <img
+              src="https://images.unsplash.com/photo-1514066558159-fc8c737ef259?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="image"
+              className="object-cover h-full w-full"
+            />
+          </Squircle>
+        </div>
       </div>
-      <div className="w-1/2 p-50 flex flex-col gap-30">
+      <div className="w-1/2 p-50 flex flex-col gap-30 ">
         <Typography
           size="35"
           color="beige"
@@ -29,7 +27,7 @@ export default function About() {
           text="The cozy coffee"
         />
         <Typography
-          size="28"
+          size="22"
           color="beige"
           font="pally"
           text={
@@ -50,6 +48,7 @@ export default function About() {
               tres leche.
             </>
           }
+          className="2xl:text-28"
         />
       </div>
     </Squircle>
