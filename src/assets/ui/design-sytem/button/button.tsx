@@ -6,6 +6,7 @@ interface buttonProps {
   bgColor: "orange" | "kaki" | "beige";
   textColor: "beige" | "kaki" | "orange";
   className?: string;
+  isLoading?: boolean;
 }
 
 export const Button = ({
