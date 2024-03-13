@@ -19,17 +19,6 @@ export const Navbar = () => {
       className="w-full h-[100px]"
     >
       <div className="bg-kakiDarker flex items-center justify-around w-full h-[100px]">
-        {/* <NavLink to="/menu/coffee">
-          {({ isActive }) => (
-            <Typography
-              text="Menu"
-              size="35"
-              color={isActive ? "orange" : "beige"}
-              font="cafeFrancoise"
-              hoverColor="orange"
-            />
-          )}
-        </NavLink> */}
         <NavLink to="/menu/coffee">
           <Typography
             text="Menu"

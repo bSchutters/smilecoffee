@@ -7,6 +7,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import DesignSystem from "./pages/designSystem";
 import ScrollToTop from "./assets/function/scrollToTop";
+import MenuContentCoffee from "./assets/ui/components/menuContent/menuContentCoffee";
 
 function App() {
   return (
@@ -15,9 +16,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/design-system" element={<DesignSystem />} />
-        <Route path="/menu/coffee" element={<Menu />} />
-        <Route path="/menu/food" element={<Menu />} />
-        <Route path="/menu/beans" element={<Menu />} />
+        <Route path="/menu/*" element={<Menu />} />
+        <Route path="/menu/test" element={<MenuContentCoffee />} />
         <Route path="/galerie" element={<Galerie />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
