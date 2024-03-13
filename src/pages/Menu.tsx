@@ -8,20 +8,25 @@ import MenuContentFood from "../assets/ui/components/menuContent/menuContentFood
 import MenuContentBeans from "../assets/ui/components/menuContent/menuContentBeans";
 
 export default function Menu() {
-  function contentMenu() {
-    const location = useLocation().pathname;
+  const location = useLocation();
 
-    if (location === "/menu/coffee") {
-      return <MenuContentCoffee />;
-    } else if (location === "/menu/beans") {
-      return <MenuContentBeans />;
-    } else if (location === "/menu/food") {
-      return <MenuContentFood />;
-    }
+  let content;
+  switch (location.pathname) {
+    case "/menu/coffee":
+      content = <MenuContentCoffee />;
+      break;
+    case "/menu/food":
+      content = <MenuContentFood />;
+      break;
+    case "/menu/beans":
+      content = <MenuContentBeans />;
+      break;
+    default:
+      content = <MenuContentCoffee />;
   }
 
   return (
-    <div className="bg-kakiPrimary w-full h-full p-30 flex flex-col gap-50">
+    <div className="bg-kakiPrimary w-full min-h-screen max-w-full p-30 flex flex-col gap-50 justify-between">
       <div className="flex gap-30 h-300">
         <div className="w-2/12">
           <LogoBloc
@@ -38,7 +43,7 @@ export default function Menu() {
           <UnderNavMenu />
         </div>
       </div>
-      <div className="w-full">{contentMenu()}</div>
+      <div className="w-full">{content}</div>
 
       <Footer />
     </div>

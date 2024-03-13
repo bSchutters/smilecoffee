@@ -1,4 +1,3 @@
-import { Squircle } from "@squircle-js/react";
 import { Typography } from "../../../design-sytem/text/typo";
 
 interface productProps {
@@ -9,11 +8,11 @@ interface productProps {
 
 export const Product = ({ title, price, img }: productProps) => {
   return (
-    <Squircle cornerRadius={30} cornerSmoothing={1} className="lg:max-w-1/4">
-      <div className="flex flex-col items-center justify-center gap-5 p-6 bg-kakiDarker h-full">
-        <Squircle cornerRadius={30} cornerSmoothing={1}>
-          <img src={img} alt="" className="w-fit h-auto" />
-        </Squircle>
+    <div className="lg:max-w-1/4">
+      <div className="flex flex-col items-center justify-center gap-5 p-6 bg-kakiDarker h-full rounded-3xl">
+        <div>
+          <img src={img} alt="" className="w-fit h-auto rounded-3xl" />
+        </div>
         <div className="flex justify-between w-full h-full">
           <Typography
             text={title}
@@ -29,6 +28,6 @@ export const Product = ({ title, price, img }: productProps) => {
           />
         </div>
       </div>
-    </Squircle>
+    </div>
   );
 };
