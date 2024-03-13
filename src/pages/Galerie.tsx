@@ -1,4 +1,5 @@
 import Footer from "../assets/ui/components/footer/footer";
+import GalleryComp from "../assets/ui/components/gallery/galleryComp";
 import { Navbar } from "../assets/ui/components/navbar/Navbar";
 import { TitlePage } from "../assets/ui/components/titlePage/titlePage";
 import { LogoBloc } from "../assets/ui/design-sytem/logo/logoBloc";
@@ -22,7 +23,7 @@ export default function Galerie() {
           <TitlePage text="our coffee shops" />
         </div>
       </div>
-      Menu
+      <GalleryComp />
       <Footer />
     </div>
   );
