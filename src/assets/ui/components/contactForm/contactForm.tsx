@@ -10,10 +10,9 @@ export default function ContactForm() {
         <Input type="text" placeholder="Name" className="w-1/3" />
         <Input type="email" placeholder="Name" />
         <Select>
-          <option value="volvo">Volvo</option>
-          <option value="saab">Saab</option>
-          <option value="mercedes">Mercedes</option>
-          <option value="audi">Audi</option>
+          <option value="volvo">Problem</option>
+          <option value="saab">Jobs</option>
+          <option value="mercedes">Other</option>
         </Select>
       </div>
       <div className="flex flex-col gap-12">
