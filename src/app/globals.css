@@ -4,32 +4,29 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Pally (Fontshare - free commercial) */
+/* Pally (self-hosted) */
 @font-face {
   font-family: "Pally";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("https://cdn.fontshare.com/wf/H7RRPPQUKUZD2RCEKOG2EUWW2PMPGIYT/CUKSXG3REB7ZF4OU6YXUM2U3W5NYEU3I/CEHOWZ3P4TA7OGFSEAUC7EPX7SYRE24V.woff2")
-    format("woff2");
+  src: url("/fonts/pally-regular.woff2") format("woff2");
 }
 @font-face {
   font-family: "Pally";
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url("https://cdn.fontshare.com/wf/V5WYWD27XO3LMOQ4EG2MQK4FRPTA5QJ2/ISQNWVNKUKTQCSPRHYNOUSUBYEKTLRCT/T66H3U7F4BLCEXDVQJD4H2MBK7CL3FOD.woff2")
-    format("woff2");
+  src: url("/fonts/pally-bold.woff2") format("woff2");
 }
 
-/* Café Françoise (CDNfonts) */
+/* Café Françoise (self-hosted) */
 @font-face {
   font-family: "Cafe Francoise";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("https://fonts.cdnfonts.com/s/20776/Caf%C3%A9%20Fran%C3%A7oise.woff")
-    format("woff");
+  src: url("/fonts/cafe-francoise.woff") format("woff");
 }
 
 @theme inline {
