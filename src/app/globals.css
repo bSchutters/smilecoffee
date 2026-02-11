@@ -26,7 +26,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("/fonts/cafe-francoise.woff") format("woff");
+  src: url("/fonts/cafe-francoise.otf") format("opentype");
 }
 
 @theme inline {
