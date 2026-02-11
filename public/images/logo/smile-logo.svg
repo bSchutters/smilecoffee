@@ -1,0 +1,16 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="120" height="120" rx="24" fill="#F4845F"/>
+  <!-- Eyes (coffee bean style) -->
+  <ellipse cx="38" cy="42" rx="8" ry="10" fill="#FFFFFF" transform="rotate(-15 38 42)"/>
+  <line x1="32" y1="38" x2="44" y2="46" stroke="#F4845F" stroke-width="2.5" stroke-linecap="round"/>
+  <ellipse cx="78" cy="38" rx="8" ry="10" fill="#FFFFFF" transform="rotate(15 78 38)"/>
+  <line x1="72" y1="34" x2="84" y2="42" stroke="#F4845F" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Steam/eyebrows -->
+  <path d="M28 22C32 16 36 20 34 14" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <path d="M68 18C72 12 76 16 74 10" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <path d="M88 22C92 16 96 20 94 14" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <!-- Smile -->
+  <path d="M32 68C32 68 44 88 60 88C76 88 88 68 88 68" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <!-- Text -->
+  <text x="60" y="108" text-anchor="middle" font-family="DM Sans, sans-serif" font-weight="700" font-size="14" fill="#FFFFFF">SMILE COFFEE</text>
+</svg>

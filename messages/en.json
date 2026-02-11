@@ -1,0 +1,138 @@
+{
+  "nav": {
+    "home": "Home",
+    "menu": "Menu",
+    "gallery": "Gallery",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "home": {
+    "hero": {
+      "title": "Smile Coffee",
+      "subtitle": "Discover our variety of food and drinks",
+      "cta": "Our Menu"
+    },
+    "highlights": {
+      "coffee": {
+        "title": "Coffee made with love",
+        "description": "Using only the best beans ensures a perfect cup every time."
+      },
+      "baked": {
+        "title": "Fresh baked goods",
+        "description": "From croissants to cakes, our pastries are made with the finest ingredients."
+      },
+      "themes": {
+        "title": "Travel every month",
+        "description": "Each month, explore a different country with authentic recipes and flavors from around the world."
+      }
+    },
+    "secret": {
+      "title": "The secret for a great day",
+      "subtitle": "We are waiting you in our cozy coffee shop"
+    },
+    "featured": {
+      "title": "Our favorites",
+      "viewAll": "See all"
+    },
+    "theme": {
+      "title": "Theme of the month",
+      "country": "Japan",
+      "description": "This month, travel to Japan with our matcha latte, iced mochi and homemade dorayaki.",
+      "cta": "Discover"
+    }
+  },
+  "menu": {
+    "title": "Our Menu",
+    "categories": {
+      "coffee": "Coffee",
+      "food": "Food",
+      "beans": "Beans"
+    }
+  },
+  "gallery": {
+    "title": "Our Gallery"
+  },
+  "about": {
+    "title": "Our Story",
+    "story": {
+      "heading": "The Cozy Coffee",
+      "p1": "Smile Coffee is a chain of coffee shops founded in 2020 by two friends with a passion for coffee and travel: Léa and Maxime. Their concept is simple: to offer their customers drinks and pastries inspired by the different cultures of the world, in a cosy, warm setting.",
+      "p2": "Each month, Smile Coffee spotlights a particular country or region, with original, authentic recipes. For example, in March 2023, the theme was Japan, and customers could enjoy a matcha latte, iced mochi or dorayaki. In April 2023, the theme was Mexico, and customers could enjoy a café de olla, a churro or a pastel de tres leches."
+    },
+    "timeline": {
+      "title": "Our monthly themes",
+      "items": {
+        "japan": {
+          "title": "Japan",
+          "date": "March 2023",
+          "description": "Matcha latte, iced mochi, dorayaki"
+        },
+        "mexico": {
+          "title": "Mexico",
+          "date": "April 2023",
+          "description": "Café de olla, churros, pastel de tres leches"
+        },
+        "italy": {
+          "title": "Italy",
+          "date": "May 2023",
+          "description": "Espresso affogato, tiramisu, cannoli"
+        },
+        "morocco": {
+          "title": "Morocco",
+          "date": "June 2023",
+          "description": "Mint tea, gazelle horns, baklava"
+        },
+        "brazil": {
+          "title": "Brazil",
+          "date": "July 2023",
+          "description": "Cafezinho, brigadeiro, açaí bowl"
+        },
+        "india": {
+          "title": "India",
+          "date": "August 2023",
+          "description": "Chai masala, gulab jamun, samosa"
+        }
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "form": {
+      "name": "First and last name",
+      "email": "Email",
+      "subject": "Subject",
+      "subjects": {
+        "general": "General inquiry",
+        "reservation": "Reservation",
+        "catering": "Catering",
+        "other": "Other"
+      },
+      "message": "Message",
+      "submit": "Submit",
+      "success": "Thank you! Your message has been sent.",
+      "errors": {
+        "name": "Name is required",
+        "email": "Email is invalid",
+        "subject": "Please select a subject",
+        "message": "Message is required"
+      }
+    },
+    "info": {
+      "title": "Information",
+      "address": "12 Rue du Bonheur, 75011 Paris",
+      "phone": "+33 1 23 45 67 89",
+      "email": "hello@smilecoffee.fr",
+      "hours": {
+        "title": "Hours",
+        "weekdays": "Mon - Fri: 7:30 AM - 7:00 PM",
+        "weekend": "Sat - Sun: 8:30 AM - 6:00 PM"
+      }
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "marquee": "Fresh coffee daily",
+    "description": "Drinks and pastries inspired by world cultures, in a warm and cozy setting.",
+    "quickLinks": "Quick Links"
+  }
+}

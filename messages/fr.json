@@ -1,0 +1,138 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "menu": "Menu",
+    "gallery": "Galerie",
+    "about": "À propos",
+    "contact": "Contact"
+  },
+  "home": {
+    "hero": {
+      "title": "Smile Coffee",
+      "subtitle": "Découvrez notre variété de boissons et de gourmandises",
+      "cta": "Notre Menu"
+    },
+    "highlights": {
+      "coffee": {
+        "title": "Un café fait avec amour",
+        "description": "Nous utilisons uniquement les meilleurs grains pour vous garantir une tasse parfaite à chaque fois."
+      },
+      "baked": {
+        "title": "Pâtisseries fraîches",
+        "description": "Des croissants aux gâteaux, nos pâtisseries sont préparées avec les meilleurs ingrédients."
+      },
+      "themes": {
+        "title": "Voyagez chaque mois",
+        "description": "Chaque mois, explorez un pays différent avec des recettes authentiques et des saveurs du monde."
+      }
+    },
+    "secret": {
+      "title": "Le secret d'une belle journée",
+      "subtitle": "Nous vous attendons dans notre cozy coffee shop"
+    },
+    "featured": {
+      "title": "Nos favoris",
+      "viewAll": "Voir tout"
+    },
+    "theme": {
+      "title": "Thème du mois",
+      "country": "Japon",
+      "description": "Ce mois-ci, voyagez au Japon avec notre matcha latte, nos mochis glacés et notre dorayaki maison.",
+      "cta": "Découvrir"
+    }
+  },
+  "menu": {
+    "title": "Notre Menu",
+    "categories": {
+      "coffee": "Café",
+      "food": "Gourmandises",
+      "beans": "Grains"
+    }
+  },
+  "gallery": {
+    "title": "Notre Galerie"
+  },
+  "about": {
+    "title": "Notre Histoire",
+    "story": {
+      "heading": "Le Cozy Coffee",
+      "p1": "Smile Coffee est une chaîne de coffee shops fondée en 2020 par deux amis passionnés de café et de voyage : Léa et Maxime. Leur concept est simple : offrir à leurs clients des boissons et des pâtisseries inspirées des différentes cultures du monde, dans un cadre chaleureux et convivial.",
+      "p2": "Chaque mois, Smile Coffee met en lumière un pays ou une région en particulier, avec des recettes originales et authentiques. Par exemple, en mars 2023, le thème était le Japon, et les clients pouvaient déguster un matcha latte, un mochi glacé ou un dorayaki. En avril 2023, le thème était le Mexique, et les clients pouvaient savourer un café de olla, un churro ou un pastel de tres leches."
+    },
+    "timeline": {
+      "title": "Nos thèmes mensuels",
+      "items": {
+        "japan": {
+          "title": "Japon",
+          "date": "Mars 2023",
+          "description": "Matcha latte, mochi glacé, dorayaki"
+        },
+        "mexico": {
+          "title": "Mexique",
+          "date": "Avril 2023",
+          "description": "Café de olla, churros, pastel de tres leches"
+        },
+        "italy": {
+          "title": "Italie",
+          "date": "Mai 2023",
+          "description": "Espresso affogato, tiramisu, cannoli"
+        },
+        "morocco": {
+          "title": "Maroc",
+          "date": "Juin 2023",
+          "description": "Thé à la menthe, cornes de gazelle, baklava"
+        },
+        "brazil": {
+          "title": "Brésil",
+          "date": "Juillet 2023",
+          "description": "Cafezinho, brigadeiro, açaí bowl"
+        },
+        "india": {
+          "title": "Inde",
+          "date": "Août 2023",
+          "description": "Chai masala, gulab jamun, samosa"
+        }
+      }
+    }
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "form": {
+      "name": "Nom et prénom",
+      "email": "Email",
+      "subject": "Sujet",
+      "subjects": {
+        "general": "Question générale",
+        "reservation": "Réservation",
+        "catering": "Traiteur",
+        "other": "Autre"
+      },
+      "message": "Message",
+      "submit": "Envoyer",
+      "success": "Merci ! Votre message a été envoyé.",
+      "errors": {
+        "name": "Le nom est requis",
+        "email": "L'email est invalide",
+        "subject": "Veuillez sélectionner un sujet",
+        "message": "Le message est requis"
+      }
+    },
+    "info": {
+      "title": "Informations",
+      "address": "12 Rue du Bonheur, 75011 Paris",
+      "phone": "+33 1 23 45 67 89",
+      "email": "hello@smilecoffee.fr",
+      "hours": {
+        "title": "Horaires",
+        "weekdays": "Lun - Ven : 7h30 - 19h00",
+        "weekend": "Sam - Dim : 8h30 - 18h00"
+      }
+    }
+  },
+  "footer": {
+    "rights": "Tous droits réservés",
+    "marquee": "Café frais tous les jours",
+    "description": "Des boissons et pâtisseries inspirées des cultures du monde, dans un cadre chaleureux.",
+    "quickLinks": "Liens rapides"
+  }
+}
