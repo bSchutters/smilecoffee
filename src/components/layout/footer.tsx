@@ -14,23 +14,13 @@ export function Footer() {
     <footer className="bg-green-dark border-t border-cream/10">
       {/* Marquee */}
       <div className="overflow-hidden border-b border-cream/10 py-3">
-        <Marquee pauseOnHover className="text-cream/70 text-sm font-bold uppercase tracking-widest">
-          <span className="mx-8 flex items-center gap-2">
-            <Coffee size={14} aria-hidden="true" />
-            {t("footer.marquee")}
-          </span>
-          <span className="mx-8 flex items-center gap-2">
-            <Coffee size={14} aria-hidden="true" />
-            Smile Coffee
-          </span>
-          <span className="mx-8 flex items-center gap-2">
-            <Coffee size={14} aria-hidden="true" />
-            {t("footer.marquee")}
-          </span>
-          <span className="mx-8 flex items-center gap-2">
-            <Coffee size={14} aria-hidden="true" />
-            Smile Coffee
-          </span>
+        <Marquee pauseOnHover className="text-cream/70 text-sm font-bold uppercase tracking-widest [--gap:2rem]">
+          {Array.from({ length: 6 }).map((_, i) => (
+            <span key={i} className="flex shrink-0 items-center gap-2">
+              <Coffee size={14} aria-hidden="true" />
+              {i % 2 === 0 ? t("footer.marquee") : "Smile Coffee"}
+            </span>
+          ))}
         </Marquee>
       </div>
 
