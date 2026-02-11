@@ -5,6 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { BlurFade } from "@/components/magicui/blur-fade";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 
 export function ThemeSection() {
   const t = useTranslations("home.theme");
@@ -26,9 +28,9 @@ export function ThemeSection() {
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
         <BlurFade delay={0.1}>
-          <span className="inline-block rounded-full bg-cream/10 px-5 py-2 text-xs font-bold uppercase tracking-wider text-cream backdrop-blur-sm border border-cream/20">
+          <Badge variant="outline" className="rounded-full bg-cream/10 px-5 py-2 text-xs font-bold uppercase tracking-wider text-cream backdrop-blur-sm border-cream/20">
             {t("title")}
-          </span>
+          </Badge>
         </BlurFade>
 
         <BlurFade delay={0.2}>
@@ -47,13 +49,12 @@ export function ThemeSection() {
         </BlurFade>
 
         <BlurFade delay={0.4}>
-          <Link
-            href={`/${locale}/menu`}
-            className="mt-10 group inline-flex items-center gap-2 rounded-full border-2 border-cream/30 px-7 py-3 text-sm font-bold uppercase tracking-wider text-cream transition-all hover:bg-cream/10 hover:border-cream/50 focus-visible:ring-2 focus-visible:ring-cream focus-visible:outline-none"
-          >
-            {t("cta")}
-            <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" aria-hidden="true" />
-          </Link>
+          <Button asChild variant="outline" className="mt-10 group rounded-full border-2 border-cream/30 px-7 py-3 h-auto text-sm font-bold uppercase tracking-wider text-cream bg-transparent hover:bg-cream/10 hover:border-cream/50 hover:text-cream">
+            <Link href={`/${locale}/menu`}>
+              {t("cta")}
+              <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" aria-hidden="true" />
+            </Link>
+          </Button>
         </BlurFade>
       </div>
     </section>

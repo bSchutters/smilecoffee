@@ -27,7 +27,7 @@
       }
     },
     "secret": {
-      "title": "Le secret d'une belle journée",
+      "title": "Notre recette du bonheur",
       "subtitle": "Nous vous attendons dans notre cozy coffee shop"
     },
     "featured": {
@@ -69,37 +69,37 @@
       "p2": "Chaque mois, Smile Coffee met en lumière un pays ou une région en particulier, avec des recettes originales et authentiques. Par exemple, en mars 2023, le thème était le Japon, et les clients pouvaient déguster un matcha latte, un mochi glacé ou un dorayaki. En avril 2023, le thème était le Mexique, et les clients pouvaient savourer un café de olla, un churro ou un pastel de tres leches."
     },
     "timeline": {
-      "title": "Nos thèmes mensuels",
+      "title": "Nos saveurs du monde",
       "items": {
         "japan": {
           "title": "Japon",
           "date": "Mars 2023",
-          "description": "Matcha latte, mochi glacé, dorayaki"
+          "description": "Matcha latte onctueux, mochi glacé et dorayaki maison pour un voyage au pays du soleil levant."
         },
         "mexico": {
           "title": "Mexique",
           "date": "Avril 2023",
-          "description": "Café de olla, churros, pastel de tres leches"
+          "description": "Café de olla aux épices, churros croustillants et pastel de tres leches fondant en bouche."
         },
         "italy": {
           "title": "Italie",
           "date": "Mai 2023",
-          "description": "Espresso affogato, tiramisu, cannoli"
+          "description": "Espresso affogato, tiramisu crémeux et cannoli siciliens pour la dolce vita."
         },
         "morocco": {
           "title": "Maroc",
           "date": "Juin 2023",
-          "description": "Thé à la menthe, cornes de gazelle, baklava"
+          "description": "Thé à la menthe parfumé, cornes de gazelle dorées et baklava au miel."
         },
         "brazil": {
           "title": "Brésil",
           "date": "Juillet 2023",
-          "description": "Cafezinho, brigadeiro, açaí bowl"
+          "description": "Cafezinho bien corsé, brigadeiros fondants et açaí bowl vitaminé tout droit de Rio."
         },
         "india": {
           "title": "Inde",
           "date": "Août 2023",
-          "description": "Chai masala, gulab jamun, samosa"
+          "description": "Chai masala épicé, gulab jamun au sirop de rose et samosas dorés aux légumes."
         }
       }
     }

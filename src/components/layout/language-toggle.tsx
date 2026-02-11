@@ -2,6 +2,7 @@
 
 import { useLocale } from "next-intl";
 import { useRouter, usePathname } from "next/navigation";
+import { Button } from "@/components/ui/button";
 
 export function LanguageToggle() {
   const locale = useLocale();
@@ -17,31 +18,35 @@ export function LanguageToggle() {
 
   return (
     <div className="flex items-center gap-1 text-sm font-bold uppercase tracking-wide">
-      <button
+      <Button
+        variant="ghost"
+        size="sm"
         onClick={() => switchTo("fr")}
         aria-label="Passer en français"
         aria-current={locale === "fr" ? "true" : undefined}
-        className={`px-2 py-1 rounded-md transition-colors focus-visible:ring-2 focus-visible:ring-cream focus-visible:outline-none ${
+        className={`cursor-pointer px-2 py-1 h-auto rounded-md hover:bg-transparent ${
           locale === "fr"
             ? "text-cream underline underline-offset-4 decoration-2"
             : "text-cream/60 hover:text-cream/80"
         }`}
       >
         FR
-      </button>
+      </Button>
       <span className="text-cream/20" aria-hidden="true">|</span>
-      <button
+      <Button
+        variant="ghost"
+        size="sm"
         onClick={() => switchTo("en")}
         aria-label="Switch to English"
         aria-current={locale === "en" ? "true" : undefined}
-        className={`px-2 py-1 rounded-md transition-colors focus-visible:ring-2 focus-visible:ring-cream focus-visible:outline-none ${
+        className={`cursor-pointer px-2 py-1 h-auto rounded-md hover:bg-transparent ${
           locale === "en"
             ? "text-cream underline underline-offset-4 decoration-2"
             : "text-cream/60 hover:text-cream/80"
         }`}
       >
         EN
-      </button>
+      </Button>
     </div>
   );
 }

@@ -74,32 +74,32 @@
         "japan": {
           "title": "Japan",
           "date": "March 2023",
-          "description": "Matcha latte, iced mochi, dorayaki"
+          "description": "Creamy matcha latte, iced mochi and homemade dorayaki for a trip to the land of the rising sun."
         },
         "mexico": {
           "title": "Mexico",
           "date": "April 2023",
-          "description": "Café de olla, churros, pastel de tres leches"
+          "description": "Spiced café de olla, crispy churros and melt-in-your-mouth pastel de tres leches."
         },
         "italy": {
           "title": "Italy",
           "date": "May 2023",
-          "description": "Espresso affogato, tiramisu, cannoli"
+          "description": "Espresso affogato, creamy tiramisu and Sicilian cannoli for the dolce vita."
         },
         "morocco": {
           "title": "Morocco",
           "date": "June 2023",
-          "description": "Mint tea, gazelle horns, baklava"
+          "description": "Fragrant mint tea, golden gazelle horns and honey-drizzled baklava."
         },
         "brazil": {
           "title": "Brazil",
           "date": "July 2023",
-          "description": "Cafezinho, brigadeiro, açaí bowl"
+          "description": "Bold cafezinho, melt-in-your-mouth brigadeiros and a vibrant açaí bowl straight from Rio."
         },
         "india": {
           "title": "India",
           "date": "August 2023",
-          "description": "Chai masala, gulab jamun, samosa"
+          "description": "Spiced chai masala, rose syrup gulab jamun and golden vegetable samosas."
         }
       }
     }

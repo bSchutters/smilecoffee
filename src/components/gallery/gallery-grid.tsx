@@ -2,7 +2,7 @@
 
 import { useState, useRef } from "react";
 import { useTranslations } from "next-intl";
-import { motion } from "motion/react";
+import Image from "next/image";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import { Lightbox } from "./lightbox";
 
@@ -70,26 +70,25 @@ export function GalleryGrid() {
           const alt = t(img.key);
           return (
             <BlurFade key={i} delay={i * 0.1}>
-              <motion.div
+              <div
                 role="button"
                 tabIndex={0}
                 aria-label={`${alt} — ${ta("openImage")}`}
                 className={`relative overflow-hidden rounded-2xl cursor-pointer group h-full ${img.span} focus-visible:ring-2 focus-visible:ring-cream focus-visible:outline-none`}
-                whileHover={{ scale: 1.02 }}
-                whileFocus={{ scale: 1.02 }}
                 onClick={(e) => handleOpen({ src: img.src, alt }, e.currentTarget)}
                 onKeyDown={(e) => handleKeyDown(e, { src: img.src, alt })}
               >
-                <img
+                <Image
                   src={img.src}
                   alt={alt}
-                  loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
                 {/* Overlay effect */}
                 <div className="absolute inset-0 bg-green-dark/0 group-hover:bg-green-dark/20 transition-colors duration-300" />
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <div className="h-20 w-20 rounded-full border-2 border-cream/50 flex items-center justify-center backdrop-blur-sm bg-white/10">
+                  <div className="h-20 w-20 rounded-full border-2 border-cream/50 flex items-center justify-center bg-green-dark/40">
                     <svg
                       width="24"
                       height="24"
@@ -108,7 +107,7 @@ export function GalleryGrid() {
                     </svg>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             </BlurFade>
           );
         })}

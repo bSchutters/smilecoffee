@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { BlurFade } from "@/components/magicui/blur-fade";
+import { Button } from "@/components/ui/button";
 
 export function Hero() {
   const t = useTranslations("home.hero");
@@ -45,13 +46,12 @@ export function Hero() {
         </BlurFade>
 
         <BlurFade delay={0.5}>
-          <Link
-            href={`/${locale}/menu`}
-            className="mt-10 group inline-flex items-center gap-2 rounded-full bg-cream px-8 py-3.5 text-sm font-bold uppercase tracking-wider text-green-dark transition-all hover:bg-cream-dark hover:scale-105 focus-visible:ring-2 focus-visible:ring-cream focus-visible:outline-none"
-          >
-            {t("cta")}
-            <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" aria-hidden="true" />
-          </Link>
+          <Button asChild className="mt-10 group rounded-full bg-cream px-8 py-3.5 h-auto text-sm font-bold uppercase tracking-wider text-green-dark hover:bg-cream-dark">
+            <Link href={`/${locale}/menu`}>
+              {t("cta")}
+              <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" aria-hidden="true" />
+            </Link>
+          </Button>
         </BlurFade>
       </div>
 

@@ -25,7 +25,7 @@ export function Marquee({
     >
       <div
         className={cn(
-          "flex shrink-0 items-center justify-around gap-[var(--gap)] animate-marquee",
+          "flex min-w-full shrink-0 items-center justify-around gap-[var(--gap)] animate-marquee",
           reverse && "[animation-direction:reverse]",
           pauseOnHover && "group-hover:[animation-play-state:paused]"
         )}
@@ -34,7 +34,7 @@ export function Marquee({
       </div>
       <div
         className={cn(
-          "flex shrink-0 items-center justify-around gap-[var(--gap)] animate-marquee",
+          "flex min-w-full shrink-0 items-center justify-around gap-[var(--gap)] animate-marquee",
           reverse && "[animation-direction:reverse]",
           pauseOnHover && "group-hover:[animation-play-state:paused]"
         )}

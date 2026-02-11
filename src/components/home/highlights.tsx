@@ -4,6 +4,9 @@ import { useTranslations } from "next-intl";
 import { motion } from "motion/react";
 import { Coffee, Cake, Globe } from "lucide-react";
 import { BlurFade } from "@/components/magicui/blur-fade";
+import { Card, CardContent } from "@/components/ui/card";
+
+const rotations = [-1.5, 0.8, -1] as const;
 
 const pillars = [
   { key: "coffee", icon: Coffee },
@@ -39,20 +42,24 @@ export function Highlights() {
           {pillars.map((pillar, i) => (
             <BlurFade key={pillar.key} delay={0.15 + i * 0.1}>
               <motion.div
-                whileHover={{ y: -6 }}
-                whileFocus={{ y: -6 }}
+                initial={{ rotate: 0 }}
+                whileHover={{ rotate: rotations[i] }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className="rounded-2xl bg-green-dark p-8 text-center h-full"
+                className="h-full"
               >
-                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-orange/15">
-                  <pillar.icon className="h-7 w-7 text-orange" aria-hidden="true" />
-                </div>
-                <h3 className="mt-6 text-lg font-bold uppercase tracking-wide text-cream">
-                  {t(`highlights.${pillar.key}.title`)}
-                </h3>
-                <p className="mt-3 text-sm text-cream/90 leading-relaxed">
-                  {t(`highlights.${pillar.key}.description`)}
-                </p>
+                <Card className="bg-green-dark p-0 h-full border-none">
+                  <CardContent className="p-8 text-center">
+                    <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-orange/15">
+                      <pillar.icon className="h-7 w-7 text-orange" aria-hidden="true" />
+                    </div>
+                    <h3 className="mt-6 text-lg font-bold uppercase tracking-wide text-cream">
+                      {t(`highlights.${pillar.key}.title`)}
+                    </h3>
+                    <p className="mt-3 text-sm text-cream/90 leading-relaxed">
+                      {t(`highlights.${pillar.key}.description`)}
+                    </p>
+                  </CardContent>
+                </Card>
               </motion.div>
             </BlurFade>
           ))}

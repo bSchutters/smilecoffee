@@ -5,7 +5,7 @@ export default function MaintenancePage() {
     <div className="flex min-h-screen items-center justify-center bg-green-dark p-6">
       <div className="w-full max-w-md rounded-2xl bg-cream p-10 text-center text-green-dark shadow-xl">
         <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-green-dark">
-          <Coffee className="h-10 w-10 text-cream" />
+          <Coffee className="h-10 w-10 text-cream" aria-hidden="true" />
         </div>
 
         <h1 className="mb-2 font-display text-4xl">Smile Coffee</h1>

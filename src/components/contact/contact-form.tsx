@@ -2,9 +2,20 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import { motion, AnimatePresence } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Card, CardContent } from "@/components/ui/card";
 
 interface FormErrors {
   name?: string;
@@ -73,7 +84,7 @@ export function ContactForm() {
                     <label htmlFor="contact-name" className="sr-only">
                       {t("form.name")}
                     </label>
-                    <input
+                    <Input
                       id="contact-name"
                       type="text"
                       required
@@ -85,7 +96,7 @@ export function ContactForm() {
                       }
                       aria-invalid={!!errors.name}
                       aria-describedby={errors.name ? "name-error" : undefined}
-                      className="w-full rounded-2xl border-2 border-cream/30 bg-green-medium/60 px-5 py-4 text-sm text-cream placeholder:text-cream/60 focus:border-cream focus:outline-none focus-visible:ring-2 focus-visible:ring-cream transition-colors"
+                      className="h-auto rounded-2xl border-2 border-cream/30 bg-green-medium/60 px-5 py-4 text-sm text-cream placeholder:text-cream/60 focus-visible:border-cream focus-visible:ring-cream shadow-none"
                     />
                     {errors.name && (
                       <p id="name-error" role="alert" className="mt-1 text-xs text-cream font-bold">
@@ -99,7 +110,7 @@ export function ContactForm() {
                     <label htmlFor="contact-email" className="sr-only">
                       {t("form.email")}
                     </label>
-                    <input
+                    <Input
                       id="contact-email"
                       type="email"
                       required
@@ -111,7 +122,7 @@ export function ContactForm() {
                       }
                       aria-invalid={!!errors.email}
                       aria-describedby={errors.email ? "email-error" : undefined}
-                      className="w-full rounded-2xl border-2 border-cream/30 bg-green-medium/60 px-5 py-4 text-sm text-cream placeholder:text-cream/60 focus:border-cream focus:outline-none focus-visible:ring-2 focus-visible:ring-cream transition-colors"
+                      className="h-auto rounded-2xl border-2 border-cream/30 bg-green-medium/60 px-5 py-4 text-sm text-cream placeholder:text-cream/60 focus-visible:border-cream focus-visible:ring-cream shadow-none"
                     />
                     {errors.email && (
                       <p id="email-error" role="alert" className="mt-1 text-xs text-cream font-bold">
@@ -128,32 +139,33 @@ export function ContactForm() {
                   <label htmlFor="contact-subject" className="sr-only">
                     {t("form.subject")}
                   </label>
-                  <select
-                    id="contact-subject"
-                    required
+                  <Select
                     value={form.subject}
-                    onChange={(e) =>
-                      setForm({ ...form, subject: e.target.value })
+                    onValueChange={(value) =>
+                      setForm({ ...form, subject: value })
                     }
-                    aria-invalid={!!errors.subject}
-                    aria-describedby={errors.subject ? "subject-error" : undefined}
-                    className="w-full rounded-2xl border-2 border-cream/30 bg-green-medium/60 px-5 py-4 text-sm text-cream focus:border-cream focus:outline-none focus-visible:ring-2 focus-visible:ring-cream transition-colors appearance-none"
                   >
-                    <option value="" disabled className="bg-green-medium text-cream">
-                      {t("form.subject")}
-                    </option>
-                    {["general", "reservation", "catering", "other"].map(
-                      (key) => (
-                        <option
-                          key={key}
-                          value={key}
-                          className="bg-green-medium text-cream"
-                        >
-                          {t(`form.subjects.${key}`)}
-                        </option>
-                      )
-                    )}
-                  </select>
+                    <SelectTrigger
+                      className="w-full h-auto rounded-2xl border-2 border-cream/30 bg-green-medium/60 px-5 py-4 text-sm text-cream shadow-none focus-visible:border-cream focus-visible:ring-cream [&_svg]:text-cream/60"
+                      aria-invalid={!!errors.subject}
+                      aria-describedby={errors.subject ? "subject-error" : undefined}
+                    >
+                      <SelectValue placeholder={t("form.subject")} />
+                    </SelectTrigger>
+                    <SelectContent className="bg-green-medium border-cream/20 text-cream">
+                      {["general", "reservation", "catering", "other"].map(
+                        (key) => (
+                          <SelectItem
+                            key={key}
+                            value={key}
+                            className="text-cream focus:bg-green-light/60 focus:text-cream"
+                          >
+                            {t(`form.subjects.${key}`)}
+                          </SelectItem>
+                        )
+                      )}
+                    </SelectContent>
+                  </Select>
                   {errors.subject && (
                     <p id="subject-error" role="alert" className="mt-1 text-xs text-cream font-bold">
                       {errors.subject}
@@ -168,7 +180,7 @@ export function ContactForm() {
                   <label htmlFor="contact-message" className="sr-only">
                     {t("form.message")}
                   </label>
-                  <textarea
+                  <Textarea
                     id="contact-message"
                     required
                     placeholder={t("form.message")}
@@ -179,7 +191,7 @@ export function ContactForm() {
                     rows={6}
                     aria-invalid={!!errors.message}
                     aria-describedby={errors.message ? "message-error" : undefined}
-                    className="w-full rounded-2xl border-2 border-cream/30 bg-green-medium/60 px-5 py-4 text-sm text-cream placeholder:text-cream/60 focus:border-cream focus:outline-none focus-visible:ring-2 focus-visible:ring-cream transition-colors resize-none"
+                    className="rounded-2xl border-2 border-cream/30 bg-green-medium/60 px-5 py-4 text-sm text-cream placeholder:text-cream/60 focus-visible:border-cream focus-visible:ring-cream resize-none shadow-none"
                   />
                   {errors.message && (
                     <p id="message-error" role="alert" className="mt-1 text-xs text-cream font-bold">
@@ -192,15 +204,13 @@ export function ContactForm() {
               {/* Submit */}
               <BlurFade delay={0.4}>
                 <div className="flex justify-end">
-                  <motion.button
+                  <Button
                     type="submit"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="flex items-center gap-2 rounded-2xl bg-cream px-8 py-4 text-sm font-bold uppercase tracking-wider text-green-dark transition-colors hover:bg-cream-dark focus-visible:ring-2 focus-visible:ring-cream focus-visible:ring-offset-2 focus-visible:ring-offset-green-dark focus-visible:outline-none"
+                    className="rounded-2xl bg-cream px-8 py-4 h-auto text-sm font-bold uppercase tracking-wider text-green-dark hover:bg-cream-dark"
                   >
                     <Send size={16} aria-hidden="true" />
                     {t("form.submit")}
-                  </motion.button>
+                  </Button>
                 </div>
               </BlurFade>
             </motion.form>
@@ -211,43 +221,45 @@ export function ContactForm() {
       {/* Info sidebar */}
       <div className="lg:col-span-2">
         <BlurFade delay={0.2}>
-          <div className="rounded-2xl bg-green-medium/60 border border-cream/10 p-8 space-y-6">
-            <h2 className="text-lg font-bold uppercase tracking-wide text-cream">
-              {t("info.title")}
-            </h2>
+          <Card className="rounded-2xl bg-green-medium/60 border-cream/10 p-0">
+            <CardContent className="p-8 space-y-6">
+              <h2 className="text-lg font-bold uppercase tracking-wide text-cream">
+                {t("info.title")}
+              </h2>
 
-            <div className="space-y-4">
-              <div className="flex items-start gap-3">
-                <MapPin size={18} className="text-orange mt-0.5 shrink-0" aria-hidden="true" />
-                <p className="text-sm text-cream">{t("info.address")}</p>
-              </div>
-              <div className="flex items-start gap-3">
-                <Phone size={18} className="text-orange mt-0.5 shrink-0" aria-hidden="true" />
-                <p className="text-sm text-cream">{t("info.phone")}</p>
-              </div>
-              <div className="flex items-start gap-3">
-                <Mail size={18} className="text-orange mt-0.5 shrink-0" aria-hidden="true" />
-                <p className="text-sm text-cream">{t("info.email")}</p>
-              </div>
-            </div>
-
-            <div className="border-t border-cream/10 pt-6">
-              <div className="flex items-start gap-3">
-                <Clock size={18} className="text-orange mt-0.5 shrink-0" aria-hidden="true" />
-                <div>
-                  <p className="text-sm font-bold text-cream">
-                    {t("info.hours.title")}
-                  </p>
-                  <p className="text-sm text-cream mt-1">
-                    {t("info.hours.weekdays")}
-                  </p>
-                  <p className="text-sm text-cream">
-                    {t("info.hours.weekend")}
-                  </p>
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <MapPin size={18} className="text-orange mt-0.5 shrink-0" aria-hidden="true" />
+                  <p className="text-sm text-cream">{t("info.address")}</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Phone size={18} className="text-orange mt-0.5 shrink-0" aria-hidden="true" />
+                  <p className="text-sm text-cream">{t("info.phone")}</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Mail size={18} className="text-orange mt-0.5 shrink-0" aria-hidden="true" />
+                  <p className="text-sm text-cream">{t("info.email")}</p>
                 </div>
               </div>
-            </div>
-          </div>
+
+              <div className="border-t border-cream/10 pt-6">
+                <div className="flex items-start gap-3">
+                  <Clock size={18} className="text-orange mt-0.5 shrink-0" aria-hidden="true" />
+                  <div>
+                    <p className="text-sm font-bold text-cream">
+                      {t("info.hours.title")}
+                    </p>
+                    <p className="text-sm text-cream mt-1">
+                      {t("info.hours.weekdays")}
+                    </p>
+                    <p className="text-sm text-cream">
+                      {t("info.hours.weekend")}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </BlurFade>
       </div>
     </div>

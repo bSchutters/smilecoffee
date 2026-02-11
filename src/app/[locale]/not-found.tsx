@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useTranslations, useLocale } from "next-intl";
 import { motion } from "motion/react";
 import { Coffee, ArrowLeft } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function NotFound() {
   const t = useTranslations("notFound");
@@ -23,15 +24,12 @@ export default function NotFound() {
 
         <p className="text-lg text-cream/90">{t("message")}</p>
 
-        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-          <Link
-            href={`/${locale}`}
-            className="inline-flex items-center gap-2 rounded-2xl bg-cream px-8 py-4 text-sm font-bold uppercase tracking-wider text-green-dark transition-colors hover:bg-cream-dark focus-visible:ring-2 focus-visible:ring-cream focus-visible:ring-offset-2 focus-visible:ring-offset-green-dark focus-visible:outline-none"
-          >
+        <Button asChild className="rounded-2xl bg-cream px-8 py-4 h-auto text-sm font-bold uppercase tracking-wider text-green-dark hover:bg-cream-dark">
+          <Link href={`/${locale}`}>
             <ArrowLeft size={16} aria-hidden="true" />
             {t("backHome")}
           </Link>
-        </motion.div>
+        </Button>
       </motion.div>
     </div>
   );
