@@ -15,21 +15,24 @@ export function FeaturedProducts() {
   const featured = menuItems.filter((item) => item.featured).slice(0, 4);
 
   return (
-    <section className="py-16">
+    <section className="py-16" aria-labelledby="featured-heading">
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex items-end justify-between mb-10">
           <BlurFade>
-            <h2 className="font-display text-3xl text-cream md:text-4xl">
+            <h2
+              id="featured-heading"
+              className="font-display text-3xl text-cream md:text-4xl"
+            >
               {t("title")}
             </h2>
           </BlurFade>
           <BlurFade delay={0.1}>
             <Link
               href={`/${locale}/menu`}
-              className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-orange hover:text-orange-light transition-colors"
+              className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-cream hover:text-cream-dark transition-colors focus-visible:ring-2 focus-visible:ring-cream focus-visible:outline-none rounded-lg px-2 py-1"
             >
               {t("viewAll")}
-              <ArrowRight size={16} />
+              <ArrowRight size={16} aria-hidden="true" />
             </Link>
           </BlurFade>
         </div>
@@ -39,6 +42,7 @@ export function FeaturedProducts() {
             <BlurFade key={item.id} delay={0.1 + i * 0.08}>
               <motion.div
                 whileHover={{ y: -4 }}
+                whileFocus={{ y: -4 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 className="overflow-hidden rounded-2xl bg-green-medium/60 border border-cream/10"
               >
@@ -56,10 +60,10 @@ export function FeaturedProducts() {
                     {item.name[lang]}
                   </h3>
                   <div className="flex items-center justify-between mt-1">
-                    <p className="text-xs text-cream/50 line-clamp-1">
+                    <p className="text-xs text-cream/80 line-clamp-1">
                       {item.description[lang]}
                     </p>
-                    <span className="text-sm font-bold text-orange shrink-0 ml-2">
+                    <span className="text-sm font-bold text-cream shrink-0 ml-2">
                       {item.price.toFixed(0)}€
                     </span>
                   </div>

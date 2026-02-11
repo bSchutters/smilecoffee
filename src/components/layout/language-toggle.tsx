@@ -20,10 +20,11 @@ export function LanguageToggle() {
       <button
         onClick={() => switchTo("fr")}
         aria-label="Passer en français"
-        className={`px-2 py-1 rounded-md transition-colors focus-visible:ring-2 focus-visible:ring-orange/50 focus-visible:outline-none ${
+        aria-current={locale === "fr" ? "true" : undefined}
+        className={`px-2 py-1 rounded-md transition-colors focus-visible:ring-2 focus-visible:ring-cream focus-visible:outline-none ${
           locale === "fr"
-            ? "text-orange"
-            : "text-cream/40 hover:text-cream/70"
+            ? "text-cream underline underline-offset-4 decoration-2"
+            : "text-cream/60 hover:text-cream/80"
         }`}
       >
         FR
@@ -32,10 +33,11 @@ export function LanguageToggle() {
       <button
         onClick={() => switchTo("en")}
         aria-label="Switch to English"
-        className={`px-2 py-1 rounded-md transition-colors focus-visible:ring-2 focus-visible:ring-orange/50 focus-visible:outline-none ${
+        aria-current={locale === "en" ? "true" : undefined}
+        className={`px-2 py-1 rounded-md transition-colors focus-visible:ring-2 focus-visible:ring-cream focus-visible:outline-none ${
           locale === "en"
-            ? "text-orange"
-            : "text-cream/40 hover:text-cream/70"
+            ? "text-cream underline underline-offset-4 decoration-2"
+            : "text-cream/60 hover:text-cream/80"
         }`}
       >
         EN

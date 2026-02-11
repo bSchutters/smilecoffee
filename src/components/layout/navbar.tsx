@@ -20,12 +20,15 @@ const navItems = [
 
 export function Navbar() {
   const t = useTranslations("nav");
+  const ta = useTranslations("a11y");
   const locale = useLocale();
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const navRef = useRef<HTMLDivElement>(null);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const hamburgerRef = useRef<HTMLButtonElement>(null);
   const prevLocaleRef = useRef(locale);
   const [indicator, setIndicator] = useState({
     left: 0,
@@ -44,12 +47,25 @@ export function Navbar() {
     setMobileOpen(false);
   }, [pathname]);
 
+  // Close mobile menu on Escape
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setMobileOpen(false);
+        hamburgerRef.current?.focus();
+      }
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [mobileOpen]);
+
   const isActive = (href: string) =>
     href === ""
       ? pathname === `/${locale}` || pathname === `/${locale}/`
       : pathname === `/${locale}${href}` || pathname.startsWith(`/${locale}${href}/`);
 
-  // Measure the active item — useLayoutEffect runs before paint
+  // Measure the active item
   useLayoutEffect(() => {
     if (!navRef.current) return;
     const activeEl = navRef.current.querySelector<HTMLElement>(
@@ -60,13 +76,12 @@ export function Navbar() {
     const isLangSwitch = prevLocaleRef.current !== locale;
     prevLocaleRef.current = locale;
 
-    setIndicator({
+    setIndicator((prev) => ({
       left: activeEl.offsetLeft,
       width: activeEl.offsetWidth,
       ready: true,
-      // Only animate for page navigation, not language switch
-      animate: !isLangSwitch && indicator.ready,
-    });
+      animate: !isLangSwitch && prev.ready,
+    }));
   }, [pathname, locale]);
 
   return (
@@ -78,11 +93,14 @@ export function Navbar() {
             : "bg-transparent"
         }`}
       >
-        <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+        <nav
+          aria-label={ta("mainNav")}
+          className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4"
+        >
           {/* Logo */}
           <Link
             href={`/${locale}`}
-            className="flex items-center gap-3 group shrink-0"
+            className="flex items-center gap-3 group shrink-0 focus-visible:ring-2 focus-visible:ring-cream focus-visible:outline-none rounded-lg"
           >
             <Image
               src="/logos/logo-smilecoffee-horizontal.svg"
@@ -90,6 +108,7 @@ export function Navbar() {
               width={180}
               height={40}
               className="h-8 w-auto"
+              priority
             />
           </Link>
 
@@ -100,7 +119,6 @@ export function Navbar() {
               ref={navRef}
               className="relative flex items-center gap-1 rounded-full bg-green-medium/60 backdrop-blur-sm px-2 py-1.5 border border-cream/10"
             >
-              {/* CSS-driven indicator: no Framer Motion, no async animation */}
               {indicator.ready && (
                 <div
                   className={`absolute top-1.5 bottom-1.5 rounded-full bg-green-light/60 border border-cream/20 ${
@@ -117,10 +135,10 @@ export function Navbar() {
                   key={item.key}
                   href={`/${locale}${item.href}`}
                   data-active={isActive(item.href)}
-                  className={`relative px-5 py-2 text-sm font-bold uppercase tracking-wide transition-colors rounded-full focus-visible:ring-2 focus-visible:ring-orange/50 focus-visible:outline-none ${
+                  className={`relative px-5 py-2 text-sm font-bold uppercase tracking-wide transition-colors rounded-full focus-visible:ring-2 focus-visible:ring-cream focus-visible:outline-none ${
                     isActive(item.href)
                       ? "text-cream"
-                      : "text-cream/70 hover:text-cream"
+                      : "text-cream/80 hover:text-cream"
                   }`}
                 >
                   <span className="relative z-10">{t(item.key)}</span>
@@ -136,11 +154,14 @@ export function Navbar() {
           <div className="flex md:hidden items-center gap-3">
             <LanguageToggle />
             <button
+              ref={hamburgerRef}
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="flex h-10 w-10 items-center justify-center rounded-xl bg-green-medium/60 text-cream"
-              aria-label="Toggle menu"
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-menu"
+              className="flex h-10 w-10 items-center justify-center rounded-xl bg-green-medium/60 text-cream focus-visible:ring-2 focus-visible:ring-cream focus-visible:outline-none"
+              aria-label={ta("toggleMenu")}
             >
-              {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+              {mobileOpen ? <X size={20} aria-hidden="true" /> : <Menu size={20} aria-hidden="true" />}
             </button>
           </div>
         </nav>
@@ -150,6 +171,8 @@ export function Navbar() {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
+            id="mobile-menu"
+            ref={mobileMenuRef}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
@@ -160,10 +183,10 @@ export function Navbar() {
                 <Link
                   key={item.key}
                   href={`/${locale}${item.href}`}
-                  className={`rounded-xl px-4 py-3 text-base font-bold uppercase tracking-wide transition-colors focus-visible:ring-2 focus-visible:ring-orange/50 focus-visible:outline-none ${
+                  className={`rounded-xl px-4 py-3 text-base font-bold uppercase tracking-wide transition-colors focus-visible:ring-2 focus-visible:ring-cream focus-visible:outline-none ${
                     isActive(item.href)
                       ? "bg-green-light/60 text-cream"
-                      : "text-cream/70 hover:bg-green-light/30 hover:text-cream"
+                      : "text-cream/80 hover:bg-green-light/30 hover:text-cream"
                   }`}
                 >
                   {t(item.key)}

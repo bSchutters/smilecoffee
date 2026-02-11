@@ -50,12 +50,21 @@
     }
   },
   "gallery": {
-    "title": "Notre Galerie"
+    "title": "Notre Galerie",
+    "images": {
+      "coffeeCup": "Tasse de café vue du dessus",
+      "interior": "Intérieur du coffee shop",
+      "barista": "Barista préparant un latte art",
+      "latteArt": "Latte art",
+      "espressoMachine": "Machine à espresso",
+      "icedCoffee": "Café glacé"
+    }
   },
   "about": {
     "title": "Notre Histoire",
     "story": {
       "heading": "Le Cozy Coffee",
+      "imageAlt": "Barista préparant un café avec soin chez Smile Coffee",
       "p1": "Smile Coffee est une chaîne de coffee shops fondée en 2020 par deux amis passionnés de café et de voyage : Léa et Maxime. Leur concept est simple : offrir à leurs clients des boissons et des pâtisseries inspirées des différentes cultures du monde, dans un cadre chaleureux et convivial.",
       "p2": "Chaque mois, Smile Coffee met en lumière un pays ou une région en particulier, avec des recettes originales et authentiques. Par exemple, en mars 2023, le thème était le Japon, et les clients pouvaient déguster un matcha latte, un mochi glacé ou un dorayaki. En avril 2023, le thème était le Mexique, et les clients pouvaient savourer un café de olla, un churro ou un pastel de tres leches."
     },
@@ -134,5 +143,18 @@
     "marquee": "Café frais tous les jours",
     "description": "Des boissons et pâtisseries inspirées des cultures du monde, dans un cadre chaleureux.",
     "quickLinks": "Liens rapides"
+  },
+  "notFound": {
+    "message": "Oups, cette page n'existe pas. Elle a peut-\u00eatre \u00e9t\u00e9 d\u00e9plac\u00e9e ou supprim\u00e9e.",
+    "backHome": "Retour \u00e0 l'accueil"
+  },
+  "a11y": {
+    "skipToContent": "Aller au contenu",
+    "close": "Fermer",
+    "toggleMenu": "Ouvrir le menu",
+    "previous": "Précédent",
+    "next": "Suivant",
+    "mainNav": "Navigation principale",
+    "openImage": "Agrandir l'image"
   }
 }

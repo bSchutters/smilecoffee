@@ -13,11 +13,13 @@ export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background image */}
-      <img
+      <Image
         src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1920&q=80"
         alt=""
         aria-hidden="true"
-        className="absolute inset-0 h-full w-full object-cover"
+        fill
+        className="object-cover"
+        priority
       />
       {/* Overlay */}
       <div className="absolute inset-0 bg-green-dark/70" />
@@ -36,7 +38,8 @@ export function Hero() {
         </BlurFade>
 
         <BlurFade delay={0.3}>
-          <p className="mt-8 text-base md:text-lg text-cream/80 max-w-sm leading-relaxed font-bold uppercase tracking-wider">
+          <h1 className="sr-only">Smile Coffee</h1>
+          <p className="mt-8 text-base md:text-lg text-cream/90 max-w-sm leading-relaxed font-bold uppercase tracking-wider">
             {t("subtitle")}
           </p>
         </BlurFade>
@@ -44,16 +47,16 @@ export function Hero() {
         <BlurFade delay={0.5}>
           <Link
             href={`/${locale}/menu`}
-            className="mt-10 group inline-flex items-center gap-2 rounded-full bg-orange px-8 py-3.5 text-sm font-bold uppercase tracking-wider text-white transition-all hover:bg-orange-light hover:scale-105"
+            className="mt-10 group inline-flex items-center gap-2 rounded-full bg-cream px-8 py-3.5 text-sm font-bold uppercase tracking-wider text-green-dark transition-all hover:bg-cream-dark hover:scale-105 focus-visible:ring-2 focus-visible:ring-cream focus-visible:outline-none"
           >
             {t("cta")}
-            <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+            <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" aria-hidden="true" />
           </Link>
         </BlurFade>
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10" aria-hidden="true">
         <BlurFade delay={0.8}>
           <div className="h-12 w-px bg-gradient-to-b from-transparent via-cream/40 to-transparent animate-pulse" />
         </BlurFade>

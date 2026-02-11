@@ -1,5 +1,3 @@
-"use client";
-
 import { cn } from "@/lib/utils";
 
 interface MarqueeProps {
@@ -40,7 +38,7 @@ export function Marquee({
           reverse && "[animation-direction:reverse]",
           pauseOnHover && "group-hover:[animation-play-state:paused]"
         )}
-        aria-hidden
+        aria-hidden="true"
       >
         {children}
       </div>

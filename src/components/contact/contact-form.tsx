@@ -50,16 +50,19 @@ export function ContactForm() {
           {submitted ? (
             <motion.div
               key="success"
+              role="status"
+              aria-live="polite"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               className="flex flex-col items-center justify-center rounded-2xl bg-green-medium/60 border border-cream/10 p-16 text-center"
             >
-              <CheckCircle size={48} className="text-orange mb-4" />
+              <CheckCircle size={48} className="text-cream mb-4" aria-hidden="true" />
               <p className="text-xl font-bold text-cream">{t("form.success")}</p>
             </motion.div>
           ) : (
             <motion.form
               key="form"
+              aria-label={t("form.submit")}
               onSubmit={handleSubmit}
               className="space-y-6"
             >
@@ -73,6 +76,8 @@ export function ContactForm() {
                     <input
                       id="contact-name"
                       type="text"
+                      required
+                      autoComplete="name"
                       placeholder={t("form.name")}
                       value={form.name}
                       onChange={(e) =>
@@ -80,10 +85,10 @@ export function ContactForm() {
                       }
                       aria-invalid={!!errors.name}
                       aria-describedby={errors.name ? "name-error" : undefined}
-                      className="w-full rounded-2xl border-2 border-orange/50 bg-green-medium/60 px-5 py-4 text-sm text-cream placeholder:text-cream/40 focus:border-orange focus:outline-none focus-visible:ring-2 focus-visible:ring-orange/50 transition-colors"
+                      className="w-full rounded-2xl border-2 border-cream/30 bg-green-medium/60 px-5 py-4 text-sm text-cream placeholder:text-cream/60 focus:border-cream focus:outline-none focus-visible:ring-2 focus-visible:ring-cream transition-colors"
                     />
                     {errors.name && (
-                      <p id="name-error" role="alert" className="mt-1 text-xs text-orange">
+                      <p id="name-error" role="alert" className="mt-1 text-xs text-cream font-bold">
                         {errors.name}
                       </p>
                     )}
@@ -97,6 +102,8 @@ export function ContactForm() {
                     <input
                       id="contact-email"
                       type="email"
+                      required
+                      autoComplete="email"
                       placeholder={t("form.email")}
                       value={form.email}
                       onChange={(e) =>
@@ -104,10 +111,10 @@ export function ContactForm() {
                       }
                       aria-invalid={!!errors.email}
                       aria-describedby={errors.email ? "email-error" : undefined}
-                      className="w-full rounded-2xl border-2 border-orange/50 bg-green-medium/60 px-5 py-4 text-sm text-cream placeholder:text-cream/40 focus:border-orange focus:outline-none focus-visible:ring-2 focus-visible:ring-orange/50 transition-colors"
+                      className="w-full rounded-2xl border-2 border-cream/30 bg-green-medium/60 px-5 py-4 text-sm text-cream placeholder:text-cream/60 focus:border-cream focus:outline-none focus-visible:ring-2 focus-visible:ring-cream transition-colors"
                     />
                     {errors.email && (
-                      <p id="email-error" role="alert" className="mt-1 text-xs text-orange">
+                      <p id="email-error" role="alert" className="mt-1 text-xs text-cream font-bold">
                         {errors.email}
                       </p>
                     )}
@@ -123,15 +130,16 @@ export function ContactForm() {
                   </label>
                   <select
                     id="contact-subject"
+                    required
                     value={form.subject}
                     onChange={(e) =>
                       setForm({ ...form, subject: e.target.value })
                     }
                     aria-invalid={!!errors.subject}
                     aria-describedby={errors.subject ? "subject-error" : undefined}
-                    className="w-full rounded-2xl border-2 border-orange/50 bg-green-medium/60 px-5 py-4 text-sm text-cream focus:border-orange focus:outline-none focus-visible:ring-2 focus-visible:ring-orange/50 transition-colors appearance-none"
+                    className="w-full rounded-2xl border-2 border-cream/30 bg-green-medium/60 px-5 py-4 text-sm text-cream focus:border-cream focus:outline-none focus-visible:ring-2 focus-visible:ring-cream transition-colors appearance-none"
                   >
-                    <option value="" className="bg-green-medium text-cream">
+                    <option value="" disabled className="bg-green-medium text-cream">
                       {t("form.subject")}
                     </option>
                     {["general", "reservation", "catering", "other"].map(
@@ -147,7 +155,7 @@ export function ContactForm() {
                     )}
                   </select>
                   {errors.subject && (
-                    <p id="subject-error" role="alert" className="mt-1 text-xs text-orange">
+                    <p id="subject-error" role="alert" className="mt-1 text-xs text-cream font-bold">
                       {errors.subject}
                     </p>
                   )}
@@ -162,6 +170,7 @@ export function ContactForm() {
                   </label>
                   <textarea
                     id="contact-message"
+                    required
                     placeholder={t("form.message")}
                     value={form.message}
                     onChange={(e) =>
@@ -170,10 +179,10 @@ export function ContactForm() {
                     rows={6}
                     aria-invalid={!!errors.message}
                     aria-describedby={errors.message ? "message-error" : undefined}
-                    className="w-full rounded-2xl border-2 border-orange/50 bg-green-medium/60 px-5 py-4 text-sm text-cream placeholder:text-cream/40 focus:border-orange focus:outline-none focus-visible:ring-2 focus-visible:ring-orange/50 transition-colors resize-none"
+                    className="w-full rounded-2xl border-2 border-cream/30 bg-green-medium/60 px-5 py-4 text-sm text-cream placeholder:text-cream/60 focus:border-cream focus:outline-none focus-visible:ring-2 focus-visible:ring-cream transition-colors resize-none"
                   />
                   {errors.message && (
-                    <p id="message-error" role="alert" className="mt-1 text-xs text-orange">
+                    <p id="message-error" role="alert" className="mt-1 text-xs text-cream font-bold">
                       {errors.message}
                     </p>
                   )}
@@ -187,9 +196,9 @@ export function ContactForm() {
                     type="submit"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="flex items-center gap-2 rounded-2xl bg-orange px-8 py-4 text-sm font-bold uppercase tracking-wider text-white transition-colors hover:bg-orange-light focus-visible:ring-2 focus-visible:ring-orange/50 focus-visible:ring-offset-2 focus-visible:ring-offset-green-dark"
+                    className="flex items-center gap-2 rounded-2xl bg-cream px-8 py-4 text-sm font-bold uppercase tracking-wider text-green-dark transition-colors hover:bg-cream-dark focus-visible:ring-2 focus-visible:ring-cream focus-visible:ring-offset-2 focus-visible:ring-offset-green-dark focus-visible:outline-none"
                   >
-                    <Send size={16} />
+                    <Send size={16} aria-hidden="true" />
                     {t("form.submit")}
                   </motion.button>
                 </div>
@@ -203,22 +212,22 @@ export function ContactForm() {
       <div className="lg:col-span-2">
         <BlurFade delay={0.2}>
           <div className="rounded-2xl bg-green-medium/60 border border-cream/10 p-8 space-y-6">
-            <h3 className="text-lg font-bold uppercase tracking-wide text-cream">
+            <h2 className="text-lg font-bold uppercase tracking-wide text-cream">
               {t("info.title")}
-            </h3>
+            </h2>
 
             <div className="space-y-4">
               <div className="flex items-start gap-3">
                 <MapPin size={18} className="text-orange mt-0.5 shrink-0" aria-hidden="true" />
-                <p className="text-sm text-cream/70">{t("info.address")}</p>
+                <p className="text-sm text-cream">{t("info.address")}</p>
               </div>
               <div className="flex items-start gap-3">
                 <Phone size={18} className="text-orange mt-0.5 shrink-0" aria-hidden="true" />
-                <p className="text-sm text-cream/70">{t("info.phone")}</p>
+                <p className="text-sm text-cream">{t("info.phone")}</p>
               </div>
               <div className="flex items-start gap-3">
                 <Mail size={18} className="text-orange mt-0.5 shrink-0" aria-hidden="true" />
-                <p className="text-sm text-cream/70">{t("info.email")}</p>
+                <p className="text-sm text-cream">{t("info.email")}</p>
               </div>
             </div>
 
@@ -229,10 +238,10 @@ export function ContactForm() {
                   <p className="text-sm font-bold text-cream">
                     {t("info.hours.title")}
                   </p>
-                  <p className="text-sm text-cream/70 mt-1">
+                  <p className="text-sm text-cream mt-1">
                     {t("info.hours.weekdays")}
                   </p>
-                  <p className="text-sm text-cream/70">
+                  <p className="text-sm text-cream">
                     {t("info.hours.weekend")}
                   </p>
                 </div>

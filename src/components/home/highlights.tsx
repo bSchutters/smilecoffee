@@ -15,17 +15,20 @@ export function Highlights() {
   const t = useTranslations("home");
 
   return (
-    <section className="py-24 bg-cream">
+    <section className="py-24 bg-cream" aria-labelledby="highlights-heading">
       <div className="mx-auto max-w-6xl px-6">
         {/* Section header */}
         <div className="text-center mb-16">
           <BlurFade>
-            <h2 className="font-display text-4xl text-green-dark md:text-5xl">
+            <h2
+              id="highlights-heading"
+              className="font-display text-4xl text-green-dark md:text-5xl"
+            >
               {t("secret.title")}
             </h2>
           </BlurFade>
           <BlurFade delay={0.1}>
-            <p className="mt-4 text-green-dark/60">
+            <p className="mt-4 text-green-dark">
               {t("secret.subtitle")}
             </p>
           </BlurFade>
@@ -37,16 +40,17 @@ export function Highlights() {
             <BlurFade key={pillar.key} delay={0.15 + i * 0.1}>
               <motion.div
                 whileHover={{ y: -6 }}
+                whileFocus={{ y: -6 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 className="rounded-2xl bg-green-dark p-8 text-center h-full"
               >
                 <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-orange/15">
-                  <pillar.icon className="h-7 w-7 text-orange" />
+                  <pillar.icon className="h-7 w-7 text-orange" aria-hidden="true" />
                 </div>
                 <h3 className="mt-6 text-lg font-bold uppercase tracking-wide text-cream">
                   {t(`highlights.${pillar.key}.title`)}
                 </h3>
-                <p className="mt-3 text-sm text-cream/50 leading-relaxed">
+                <p className="mt-3 text-sm text-cream/90 leading-relaxed">
                   {t(`highlights.${pillar.key}.description`)}
                 </p>
               </motion.div>

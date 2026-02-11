@@ -15,10 +15,11 @@ export function ProductCard({ item, locale, index }: ProductCardProps) {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
-      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay: index * 0.08 }}
       whileHover={{ scale: 1.03, y: -4 }}
+      whileFocus={{ scale: 1.03, y: -4 }}
       className="group relative overflow-hidden rounded-2xl bg-green-medium border border-cream/10 transition-shadow hover:shadow-xl hover:shadow-orange/5"
     >
       {/* Image */}
@@ -28,7 +29,7 @@ export function ProductCard({ item, locale, index }: ProductCardProps) {
           alt={item.name[lang]}
           fill
           className="object-cover transition-transform duration-300 group-hover:scale-105"
-          sizes="(max-width: 768px) 50vw, 25vw"
+          sizes="(max-width: 768px) 50vw, 33vw"
         />
         <div className="absolute inset-0 bg-orange/0 group-hover:bg-orange/10 transition-colors duration-300" />
       </div>
@@ -39,11 +40,11 @@ export function ProductCard({ item, locale, index }: ProductCardProps) {
           <h3 className="font-bold uppercase tracking-wide text-cream text-base">
             {item.name[lang]}
           </h3>
-          <span className="shrink-0 text-lg font-bold text-orange">
+          <span className="shrink-0 text-lg font-bold text-cream">
             {item.price.toFixed(0)}€
           </span>
         </div>
-        <p className="mt-2 text-xs text-cream-dark/70 leading-relaxed line-clamp-2">
+        <p className="mt-2 text-xs text-cream-dark leading-relaxed line-clamp-2">
           {item.description[lang]}
         </p>
         {item.tags && item.tags.length > 0 && (
@@ -51,7 +52,7 @@ export function ProductCard({ item, locale, index }: ProductCardProps) {
             {item.tags.map((tag) => (
               <span
                 key={tag}
-                className="rounded-full bg-orange/15 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-orange"
+                className="rounded-full bg-cream/10 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-cream"
               >
                 {tag}
               </span>
